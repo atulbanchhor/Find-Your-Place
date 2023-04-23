@@ -1,0 +1,34 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      routes:
+      - id: UserService
+        uri: lb/UserService
+        predicates:
+          -Paths= /users/**
+
+      - id: HotelService
+        uri: lb/UserService
+        predicates:
+          -Paths= /hotels/**  #in which we can also add additional path with comma like "/hotels/**,/staffs/**"
+
+      - id: RatingService
+        uri: lb/UserService
+        predicates:
+          -Paths= /ratings/**
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8084/eureka

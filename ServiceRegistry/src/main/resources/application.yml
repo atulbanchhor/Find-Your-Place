@@ -1,0 +1,11 @@
+eureka:
+  instance:
+    hostname: localhost
+
+  #by default both are true
+  client:
+    register-with-eureka: false #Indicates weather or not this instance should register its information with eureka server for discovery by others. In some cases, you do not want your instances to be discovered whereas you just want do discover other instances.
+    fetch-registry: false    # if it true it means client should fetch eureka registry information from eureka server
+
+server:
+  port: 8084

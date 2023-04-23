@@ -1,0 +1,19 @@
+server:
+  port: 8086
+
+eureka:
+  client:
+      register-with-eureka: false #Indicates weather or not this instance should register its information with eureka server for discovery by others. In some cases, you do not want your instances to be discovered whereas you just want do discover other instances.
+      fetch-registry: false    # if it true it means client should fetch eureka registry information from eureka server
+
+spring:
+  application:
+    name: Config-Server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri:   https://github.com/atulbanchhor/Microservice-Config
+          clone-on-start: true
+

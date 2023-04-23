@@ -1,0 +1,9 @@
+8080 = 
+8081 =  User Service
+8082 =  hotel service
+8083 =  rating serevice
+8084 =  service registory (eureka)
+8085 = Api gateway
+
+
+
